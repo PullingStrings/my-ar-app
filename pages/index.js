@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import arStyles from '../styles/Ar.module.css'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -14,6 +15,12 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>First Ar app</h1>
+        <Script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"
+        strategy="beforeInteractive"
+        />
+        <Script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"
+        strategy="beforeInteractive"
+        />
         <body className={arStyles.arbody}>
           {/* minimal loader shown until image descriptors are loaded */}
           <div className={arStyles.arjsloader}>
